@@ -20,6 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/login','EmployeeController@Login');
 
+Route::get('/getAllEmployee','EmployeeController@AllEmployee');
 Route::post('/createNewEmp','EmployeeController@CreateEmployee');
 Route::post('/deleteEmp','EmployeeController@DeleteEmployee');
 Route::post('/editEmp','EmployeeController@EditEmployee');
+
+Route::get('/getAllProduct','ProductController@AllProduct');
+Route::post('/createProduct','ProductController@CreateProduct');
+Route::post('/editProduct','ProductController@EditProduct');
+Route::post('/deleteProduct','ProductController@DeleteProduct');
+

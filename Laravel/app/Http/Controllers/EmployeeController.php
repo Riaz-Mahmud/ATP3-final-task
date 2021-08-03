@@ -46,6 +46,19 @@ class EmployeeController extends Controller
         }
     }
 
+    public function AllEmployee(Request $request){
+
+        $data=DB::table('emp_info')
+            ->where('status',1)
+            ->get();
+            
+        if($data){
+            return response()->json($data, 200);
+        }else{
+            return response()->json(['code'=>401, 'message' => 'No Product Found!']);
+        }
+    }
+
     public function CreateEmployee(Request $request){
         $validator = Validator::make($request->all(),
             [
